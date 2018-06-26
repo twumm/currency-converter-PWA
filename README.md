@@ -1,1 +1,1 @@
-# currency-converte-PWA
+# Currency Converter - A Progressive Web App
