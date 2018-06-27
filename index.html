@@ -4,28 +4,29 @@
     <meta charset="utf-8">
     <title>Currency Converter - A Progressive Web App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
     <h1 id="page-title">Currency converter</h1>
     <main id="app">
     <form>
-      <select name="currency-from" id="currency-from">
-        <option value="" id="currency">GHS</option>
+      <select name="currencyFrom" id="currencyFrom">
+        <!--<option value="" id="currency">GHS</option>-->
       </select>
       <input type="number" name="amount" placeholder="Enter amount">
       <span>to</span>
-      <select name="currency-to" id="currency-to">
-        <option value="" id="">GHS</option>
+      <select name="currencyTo" id="currencyTo">
+        <!--<option value="" id="">GHS</option>-->
       </select>
       <button type="submit">Convert</button>
       <input type="text" readonly placeholder="Ready to convert">
     </form>
     </main>
     <!--Add jquery file-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <!--Add script for currency converted app-->
-    <script src="/app/main.js"></script>
+    <script src="./app/main.js"></script>
   </body>
 
 </html>
