@@ -8,7 +8,7 @@ let convertButton = document.getElementById('convertButton');
 
 // Fetch data from the api.
 fetch(converterURL).then(response => {
-  let currencyName, currencyCode, option;
+  let currencyCode, option;
   // If api returned any status other than ok, inform user
   if (response.status !== 200) {
     return window.alert('Error with the request. Kindly try again.');
@@ -36,18 +36,13 @@ convertButton.addEventListener('click', e => {
   const result = document.getElementById('convertedAmount');
   const currencyIDsToConvert = fromCurrency + '_' + toCurrency;
   const queryUrl = 'https://free.currencyconverterapi.com/api/v5/convert?q=' + currencyIDsToConvert + '&compact=y';
-  // let total;
-  console.log(fromCurrency, toCurrency, amount);
 
   fetch(queryUrl).then(response => {
     response.json().then(rates => {
-      console.log(rates);
       for(let rate in rates) {
-        console.log(rates[rate].val);
         let value = rates[rate].val;
       let total = Number(amount) * value;
       total = Math.round(total * 100) /100;
-      console.log(total);
       result.value = `${total}`;
       }
     })
