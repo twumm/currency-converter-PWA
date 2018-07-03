@@ -6,7 +6,7 @@ const currencyFrom = document.getElementById('currencyFrom');
 const currencyTo = document.getElementById('currencyTo');
 let convertButton = document.getElementById('convertButton');
 
-// Fetch data from the api.
+// Fetch currency code from the API.
 fetch(converterURL).then(response => {
   let currencyCode, option;
   // If api returned any status other than ok, inform user
@@ -27,6 +27,7 @@ fetch(converterURL).then(response => {
   })
 });
 
+// Convert currency on convert button click/submit
 convertButton.addEventListener('click', e => {
 // $('#convertButton').on('click', () => {
   e.preventDefault();
@@ -49,3 +50,11 @@ convertButton.addEventListener('click', e => {
   })
 })
 
+// Add service worker.
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/service-worker.js')
+    .then(function() {
+      console.log('Service Worker Registered.');
+    })
+}
